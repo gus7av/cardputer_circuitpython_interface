@@ -9,5 +9,5 @@ This project provides a script selection menu for the M5Stack cardputer, allowin
 - Simple user interface for selecting and running scripts.
 
 ## Installation
-- Python scripts should be placed in a folder named `sketches` both on the SD card and in the root directory.
+- Python scripts should be placed in a folder named `scripts` both on the SD card and in the root directory.
 - Copy code.py to your device and run the code to start selecting scripts.
