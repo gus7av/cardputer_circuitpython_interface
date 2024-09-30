@@ -76,7 +76,7 @@ class Menu:
         supervisor.reload()
 
 # Internal and external paths configuration
-internal_sketches_path = "/sketches"
+internal_sketches_path = "/scripts"
 paths = [internal_sketches_path]
 
 # Try mounting the SD card and add paths if available
@@ -85,7 +85,7 @@ if sd_card_available:
         sd = sdcardio.SDCard(board.SD_SPI(), board.SD_CS)
         vfs = storage.VfsFat(sd)
         storage.mount(vfs, "/sd")
-        paths.append("/sd/sketches")
+        paths.append("/sd/scripts")
 
         # Add 'lib' folder from SD card to sys.path if it exists
         sd_lib_path = "/sd/lib"
