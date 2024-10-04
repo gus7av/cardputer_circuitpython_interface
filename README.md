@@ -4,9 +4,9 @@ This project provides a script selection menu for the M5Stack cardputer, allowin
 
 ## Features
 - Lists Python scripts from the internal storage and optionally from an external SD card.
-- Automatically adds the `lib` folder from the SD card to the `sys.path` for importing additional libraries.
 - Paginated display for easy navigation through multiple scripts.
 - Simple user interface for selecting and running scripts.
+- Example scripts included: Gemini chat, sd mount, print mac address
 
 ## Installation
 - Python scripts should be placed in a folder named `scripts` both on the SD card and in the root directory.
