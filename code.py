@@ -1,10 +1,9 @@
 import os
-import sys
 import board
 import supervisor
 
 # Number of entries per page
-n_entries = 4
+n_entries = 7
 
 # Try importing SD card libraries
 try:
@@ -52,7 +51,7 @@ class Menu:
         print(f"\n--- Page {self.current_page + 1}/{self.total_pages()} ---")
         for idx, script in enumerate(page_files, start=1):
             print(f"{idx}. {path_basename(script)}")
-        print("Run(#), Next(n), Prev(p), Quit(q)")
+        print("Run(#), (n)ext, (p)revious or (q)uit")
 
     def total_pages(self):
         """Return total number of pages."""
@@ -87,13 +86,8 @@ if sd_card_available:
         storage.mount(vfs, "/sd")
         paths.append("/sd/scripts")
 
-        # Add 'lib' folder from SD card to sys.path if it exists
-        sd_lib_path = "/sd/lib"
-        if path_exists(sd_lib_path):
-            sys.path.append(sd_lib_path)
-
     except Exception:
-        pass  # Handle errors silently, but you may want to log them
+        print("no sd-card detected")
 
 # Create menu instance with both internal and external paths
 menu = Menu(paths)
@@ -101,7 +95,7 @@ menu = Menu(paths)
 # Main loop to handle user input
 while True:
     menu.show_page()
-    choice = input(">>> ").strip()
+    choice = input(">>> ").lower()
 
     if choice == 'q':
         break
