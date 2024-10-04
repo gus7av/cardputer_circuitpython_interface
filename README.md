@@ -11,3 +11,4 @@ This project provides a script selection menu for the M5Stack cardputer, allowin
 ## Installation
 - Python scripts should be placed in a folder named `scripts` both on the SD card and in the root directory.
 - Copy code.py to your device and run the code to start selecting scripts.
+- To use the Gemini chat, you need the sdmount script in `lib` folder and you gemini api key in the settings.toml file. An sd card is also needed to read and write wifi details. 
